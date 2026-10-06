@@ -19,8 +19,8 @@ export default function Footer() {
           <div className="max-w-sm">
             <Logo variant="light" />
             <p className="mt-6 text-sm leading-relaxed text-cream/60">
-              A residential board &amp; care home where seniors are cared for like family —
-              warm, intimate, and full of heart.
+              A residential board &amp; care home where seniors are cared for like family,
+              in a cozy and homelike setting.
             </p>
           </div>
 
