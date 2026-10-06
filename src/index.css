@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — warm, premium board & care palette                  */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-cream: #fbf6ee;
+  --color-linen: #f4e8d6;
+  --color-sand: #ecdcc3;
+  --color-sand-deep: #e1cca8;
+  --color-tan: #d3b88b;
+
+  --color-clay: #b06a3b;
+  --color-clay-dark: #8f5229;
+  --color-clay-soft: #c9906a;
+
+  --color-sage: #7c8a68;
+  --color-sage-deep: #5c684a;
+
+  --color-bark: #2e2a23;
+  --color-bark-soft: #6e6456;
+  --color-ivory: #ffffff;
+
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgba(46, 42, 35, 0.04), 0 8px 24px rgba(46, 42, 35, 0.06);
+  --shadow-lift: 0 2px 6px rgba(46, 42, 35, 0.06), 0 24px 48px -12px rgba(46, 42, 35, 0.18);
+  --shadow-frame: 0 18px 50px -12px rgba(46, 42, 35, 0.35);
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-bark);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-clay);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-clay);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilities & components                                              */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .eyebrow {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-clay);
+  }
+
+  /* Gentle paper grain for warmth */
+  .paper-grain {
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(176, 106, 59, 0.04), transparent 42%),
+      radial-gradient(circle at 85% 75%, rgba(124, 138, 104, 0.05), transparent 46%);
+  }
+
+  .photo-frame {
+    background: #fff;
+    padding: clamp(10px, 1.4vw, 18px);
+    padding-bottom: clamp(16px, 2.4vw, 30px);
+    border-radius: 6px;
+    box-shadow: var(--shadow-frame);
+  }
+
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1.5px;
+    width: 0;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+  .link-underline:hover::after {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll reveal                                                       */
+/* ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
