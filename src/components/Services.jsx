@@ -16,8 +16,8 @@ export default function Services() {
             Everything we do is built around comfort.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-bark-soft">
-            From the smallest daily routines to the moments that matter most, our care is
-            personal, patient, and full of heart.
+            Everyday help, engaging activities, and attentive care for a small number of
+            residents.
           </p>
         </Reveal>
 

@@ -49,8 +49,7 @@ export default function About() {
           <p className="mt-6 text-lg leading-relaxed text-bark-soft">
             Oakhorne Manor is a recognized Residential Care Facility for the Elderly.
             We are a home in a residential neighborhood — equipped and staffed to provide
-            daily care for a small number of residents, so every person is truly seen,
-            known, and cared for.
+            daily care for a small number of residents.
           </p>
           <p className="mt-4 leading-relaxed text-bark-soft">
             We are here for you and your loved ones, making sure we give them the care

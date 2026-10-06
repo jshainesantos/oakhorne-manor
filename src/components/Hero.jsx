@@ -36,7 +36,7 @@ export default function Hero() {
           <p className="mt-6 text-lg leading-relaxed text-bark-soft">
             Oakhorne Manor is a residential board &amp; care home for seniors who need a
             little help with daily life — and want a warm, social, and loving place to
-            call home. Fewer residents, more heart, personal attention always.
+            call home. Fewer residents, more personal attention.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
